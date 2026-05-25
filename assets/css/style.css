@@ -1,0 +1,234 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Macondo&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "Macondo", cursive;
+    --primary-color: #3a2620; /* dark brown */
+    --secondary-color: #aa9581; /* light brown */
+    --highlight-color: #416a8e; /* blue */
+    --highlight-color-light: #7a9fc2; /* light blue */
+    --dark-theme: #fff;
+    --light-theme: #000;
+}
+
+/* Global styles */
+
+body {
+    font-family: var(--primary-font);
+    padding-top: 57.15px; /* pushes the top of the header down under fixed navbar */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.sub-heading-color {
+    color: var(--highlight-color);
+}
+
+.section {
+    padding-top: 4rem; /* prevent navbar overlap */
+}
+
+/* Buttons */
+
+.custom-button-filled {
+    border: 2px solid var(--highlight-color);
+    background-color: var(--highlight-color);
+    color: white;
+}
+
+.custom-button-filled:hover {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.custom-button-outline {
+    border: 3px solid var(--highlight-color);
+    padding: 7px 25px;
+    color: var(--highlight-color)
+}
+
+.custom-button-outline:hover {
+    background-color: var(--highlight-color);
+    color: white
+}
+
+/* Navbar */
+
+#navbar {
+    background-color: var(--primary-color);
+}
+
+#navbar .logo {
+    width: 30px;
+}
+
+.nav-link {
+    font-size: 1.2rem; /* 18px */
+  }
+
+
+
+/* Footer  */
+
+#footer-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding-bottom: 3rem;
+}
+
+#footer-section h2 {
+    color: white;
+}
+
+#footer-section .sub-heading-color {
+    color: var(--highlight-color-light);
+}
+
+#footer-section i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+#footer-section .social-links i {
+    color: var(--dark-theme);
+    font-size: 1.9rem;
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+#footer-section .links{
+    margin-right: 15px;
+}
+#footer-section .links a{
+    color: var(--dark-theme);
+    font-size: 1.2rem;
+    margin-right: 15px;
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+#footer-section .links a:hover {
+    color: var(--secondary-color);
+}
+
+#footer-section .social-links i:hover {
+    color: var(--secondary-color);
+}
+
+#footer-section .table-dark * {
+    background-color: transparent;
+}
+#footer-section .extra {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+/* Media queries */
+
+/* Small screens and up */
+@media screen and (max-width: 576px) {
+    /* increase font size in events table when screen size is large enough */
+    
+   
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    /* Make all service cards the same height for consistency */
+      .left-footer:first-child{
+        text-align: center !important;
+        display: block !important;
+    }
+
+   #footer-section .extra{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center!important;
+        margin: 0 auto;
+    
+    }
+    
+     #footer-section .extra p{
+        font-size: 0.9rem;
+        color: var(--dark-theme);
+    
+    }
+  
+   #footer-section .links a {
+    font-size: 0.9rem;
+    
+}
+
+.nav-link {
+    font-size: 0.9rem; /* 14px */
+  }
+
+   
+}
+
+/* Large devices (small laptops, 992px and up) */
+@media screen and (min-width: 992px) {
+    /* Make all service cards the same height for consistency */
+     #footer-section .links a {
+    font-size: 1rem;
+
+}
+
+.nav-link {
+    font-size: 1rem; /* 16px */
+  }
+
+   
+}
+
+/* xl devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    /* make all service cards the same height for consistency */
+   
+}
+
+/* xxl devices (larger desktops, 1400px and up) */
+@media screen and (min-width: 1400px) {
+    /* make all service cards the same height for consistency */
+   
+}
+
+.left-footer:first-child{
+display: flex;
+text-align: left;
+}
+#footer-section .logo {
+    width: 30px;
+    margin: .5rem 1.5rem 0 0;
+}
+.logo{
+    display: inline-flex;
+
+  
+ 
+}
+.logo img{
+    width: 5.5rem;
+    height: 4.625rem;
+    display: block;
+}
