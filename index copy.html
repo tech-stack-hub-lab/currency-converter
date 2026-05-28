@@ -30,7 +30,7 @@
 
 <body class="d-flex flex-column min-vh-100">
     <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg  fixed-top navbar-dark bg-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
         <div class="container">
             <a class="navbar-brand logo" href="index.html">
                  <img src="assets/images/logo.png" alt="logo image" loading="lazy"/>
@@ -48,16 +48,10 @@
                         <a class="nav-link" href="#services">About</a>
                     </li>
                     <li class="nav-item">
-                     <div id="weatherIcon"><i class="fas fa-cloud-bolt"></i>
-        <!-- <a class="dropbtn nav-link" onclick="toggleDropdown()"  aria-label="Weather Forecast" title="Weather Forecast"><i class="fas fa-cloud-bolt"></i> ▼</a>
-        <div id="myDropdown" class="dropdown-content">
-            <a href="#profile">Profile</a>
-            <a href="#settings">Settings</a>
-            <a href="#logout">Logout</a> -->
-        </div>
-        
-        </li>
-                 
+                        <a class="nav-link" href="#" aria-label="Weather Forecast" title="Weather Forecast">
+                            <i class="fas fa-cloud-bolt"></i> Weather
+                        </a>
+                    </li>
                    
                  
                     
@@ -71,14 +65,6 @@
             </div>
         </div>
     </nav>
-
-<!-- Weather Dropdown -->
-<div id="weatherMenu" class="hidden">
-  <p id="location">Loading...</p>
-  <p id="temperature"></p>
-  <p id="condition"></p>
-</div>
-
     <div class="container">
       <div class="row">
     
@@ -88,85 +74,105 @@
 
 
     <!-- Header with carousel -->
-     <header>
-      <div id="header">
-        <div class="white_bg">
-          <div class="container-fluid section">
-            <div class="row">
-               <div class="col-12 col-xl-12">
+   
+<header id="header" class="container-fluid section">
+  <div class="row">
+    <div class="col-12 col-xl-12">
       
       <h1>Convert amounts instantly</h1>
       <p>Enter an amount and choose currencies to get real-time exchange rates</p>
+<form id="currency-converter" class="converter-form" aria-label="Currency converter form">
+ <input id="amount" name="amount" type="number" placeholder="Enter amount" required>
+ <div class="currency-row">
+ <fieldset>
+          <legend>From</legend>
+          <input list="currency-list" id="from-currency" name="from-currency" placeholder="Select currency" required>
+        </fieldset>
+ <fieldset>
+ <!-- <button type="button">⇄</button> -->
+          <legend>To</legend>
+          <input list="currency-list" id="to-currency" name="to-currency" placeholder="Select currency" required>
+        </fieldset>
 
-<form class="converter-form">
+        <datalist id="currency-list">
+          <option value="USD">
+          <option value="EUR">
+          <option value="GBP">
+          <option value="INR">
+          <option value="JPY">
+          <option value="AUD">
+          <option value="CAD">
+        </datalist>
+ </div>
 
-  <!-- Amount input -->
-  <div class="amount-box">
-    <input type="number" id="amount" min="1" value="1" required>
-  </div>
 
-  <!-- Currency selectors -->
-  <div class="converter">
-    <div class="input-box">
-      <select id="fromCurrency" required>
-      </select>
-    </div>
-
-    <span id="swap" class="swap-icon">⇄</span>
-
-    <div class="input-box">
-      <select id="toCurrency" required>
-      </select>
-    </div>
-  </div>
-
-  <!-- Convert button -->
-
- <button id="convert-currency"  class="custom-button-filled" type="submit">Convert</button>
+        <button type="submit">Convert</button>
 
         <div id="result" class="result-box"></div>
       </form>
+ <h2>Live Exchange Rate</h2>
 
-            </div>
-            <div class="col-12">
-               <section class="converter-form">
-          <div class="card chart-container">
-  <canvas id="chart"></canvas>
-</div>
-        </section>
-            </div>
-            </div>
-          </div>
-   </div>
+  <div class="rate-controls mb-3">
+    <div class="row g-2 align-items-center">
+      <div class="col-12 col-sm-4">
+        <label class="form-label visually-hidden" for="rate-base">Base</label>
+        <input list="currency-list" id="rate-base" class="form-control" value="USD" />
       </div>
-     </header>
-   
-
+      <div class="col-12 col-sm-4">
+        <label class="form-label visually-hidden" for="rate-target">Target</label>
+        <input list="currency-list" id="rate-target" class="form-control" value="INR" />
+      </div>
+      <div class="col-12 col-sm-4 text-sm-end">
+        <div class="btn-group" role="group" aria-label="Range selector">
+          <button class="btn btn-outline-light range-btn active" data-range="30">Daily</button>
+          <button class="btn btn-outline-light range-btn" data-range="90">Monthly</button>
+          <button class="btn btn-outline-light range-btn" data-range="365">Yearly</button>
+          <button class="btn btn-outline-light range-btn" data-range="1825">5Y</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+  </div>
+</header>
 
 
     <!-- main element to hold all key sections of the home page. It is not part of the grid structure -->
-    <main class="flex-fill">
+    <main>
         <!-- Services section -->
-       <div class="about section">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-12 col-lg-5">
-                  <div class="about_img">
-                     <figure><img src="assets/images/a3.jpg" alt="#"></figure>
-                  </div>
-               </div>
-               <div class="col-md-12 col-lg-7">
-                  <div class="titlepage">
-                     <h2> <span class="yellow">ABOUT US</span><br>Welcome TO OUR DEGITALEX</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
-                     <a class="read_more" href="#">Read More</a>
-                  </div>
-               </div>
+        
+      
+        <section id="about" class="container section">
+            <div class="row">
+                <div class="col-12">
+                            <h2 class="display-6 text-center">About Currency Converter</h2>
+                            <!-- Enhanced About Section -->
+        <section class="py-3 py-md-5">
+          <div class="container">
+            <div class="row gy-3 gy-md-4 align-items-center">
+              <div class="col-12 col-md-5 text-center">
+                <img class="img-fluid rounded shadow-sm" loading="lazy" src="assets/images/do.png" alt="currency illustration" style="max-width:320px;"/>
+              </div>
+              <div class="col-12 col-md-7">
+                <h3 class="mb-2">What this tool does</h3>
+                <p class="lead text-secondary">Our Currency Converter helps you convert amounts instantly between major world currencies. It uses a straightforward base-rate approach for quick client-side conversions and can be extended to fetch live market rates.</p>
+                <ul class="text-secondary">
+                  <li>Fast, responsive conversions for travel, shopping, and finance.</li>
+                  <li>Type or pick currencies using the smart suggestions list.</li>
+                  <li>Light and dark themes for comfortable viewing.</li>
+                </ul>
+                <p class="mb-0">Built for clarity — if you want live rates from providers like ExchangeRate-API or OpenExchangeRates, I can wire that in next.</p>
+              </div>
             </div>
-         </div>
-      </div>
+          </div>
+        </section>
+
+    </div>
+ </div>
+ </section>
          <!-- Country-wise currency overview -->
-        <section id="country-currencies" class="section">
+        <section id="country-currencies" class="py-3 py-md-5">
           <div class="container">
             <h2 class="display-6 text-center mb-4">Country-wise Currencies</h2>
             <div class="row currency-grid">
@@ -216,7 +222,27 @@
           </div>
         </section>
 
-      
+        <!-- World top currencies list -->
+        <section id="world-currencies" class="py-3 py-md-5 bg-light-muted">
+          <div class="container">
+            <h2 class="display-6 text-center mb-4">Most Used World Currencies</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                  <span class="badge bg-secondary p-2">USD — US Dollar</span>
+                  <span class="badge bg-secondary p-2">EUR — Euro</span>
+                  <span class="badge bg-secondary p-2">JPY — Japanese Yen</span>
+                  <span class="badge bg-secondary p-2">GBP — British Pound</span>
+                  <span class="badge bg-secondary p-2">AUD — Australian Dollar</span>
+                  <span class="badge bg-secondary p-2">CAD — Canadian Dollar</span>
+                  <span class="badge bg-secondary p-2">CHF — Swiss Franc</span>
+                  <span class="badge bg-secondary p-2">CNY — Chinese Yuan</span>
+                  <span class="badge bg-secondary p-2">INR — Indian Rupee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- FAQ / Q&A section -->
         <section id="faq" class="py-3 py-md-5">
@@ -260,8 +286,8 @@
 
     <!-- Footer / contact section -->
     <!-- mt-auto added to push footer to the bottom of the page -->
-    <footer id="footer-section" class="mt-auto fixed-bottom" >
-        <div class="container">
+    <footer id="footer-section" class="mt-auto">
+        <div class="container section">
             <div class="row justify-content-center">
                 <div class="col-12 col-xl-8 col-md-8 left-footer">
                     <a class="navbar-brand logo" href="index.html">
@@ -326,9 +352,11 @@
             });
     </script>
 
-   
+    <script src="assets/js/converter.js"></script>
+    <script src="assets/js/rates.js"></script>
   <script src="assets/js/script.js"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://unpkg.com/bs-brain@2.0.4/components/charts/chart-1/assets/controller/chart-1.js"></script>
 </body>
 
 </html>

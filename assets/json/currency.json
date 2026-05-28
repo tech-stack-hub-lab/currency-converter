@@ -1,0 +1,212 @@
+[
+  {
+    "country": "Afghanistan",
+    "currency": "Afghani",
+    "iso_code": "AFN",
+    "symbol": "؋",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Albania",
+    "currency": "Lek",
+    "iso_code": "ALL",
+    "symbol": "L",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Algeria",
+    "currency": "Algerian Dinar",
+    "iso_code": "DZD",
+    "symbol": "دج",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Andorra",
+    "currency": "Euro",
+    "iso_code": "EUR",
+    "symbol": "€",
+    "notes": "Uses EUR (no national currency)"
+  },
+  {
+    "country": "Angola",
+    "currency": "Kwanza",
+    "iso_code": "AOA",
+    "symbol": "Kz",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Argentina",
+    "currency": "Argentine Peso",
+    "iso_code": "ARS",
+    "symbol": "$",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Armenia",
+    "currency": "Armenian Dram",
+    "iso_code": "AMD",
+    "symbol": "֏",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Australia",
+    "currency": "Australian Dollar",
+    "iso_code": "AUD",
+    "symbol": "$",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Austria",
+    "currency": "Euro",
+    "iso_code": "EUR",
+    "symbol": "€",
+    "notes": "Uses EUR (Eurozone member)"
+  },
+  {
+    "country": "Azerbaijan",
+    "currency": "Azerbaijani Manat",
+    "iso_code": "AZN",
+    "symbol": "₼",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Bahamas",
+    "currency": "Bahamian Dollar",
+    "iso_code": "BSD",
+    "symbol": "$",
+    "notes": "Pegged 1:1 USD"
+  },
+  {
+    "country": "Bahrain",
+    "currency": "Bahraini Dinar",
+    "iso_code": "BHD",
+    "symbol": ".ب.د",
+    "notes": "Pegged to USD"
+  },
+  {
+    "country": "Bangladesh",
+    "currency": "Taka",
+    "iso_code": "BDT",
+    "symbol": "৳",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Barbados",
+    "currency": "Barbadian Dollar",
+    "iso_code": "BBD",
+    "symbol": "$",
+    "notes": "Pegged 2:1 USD"
+  },
+  {
+    "country": "Belgium",
+    "currency": "Euro",
+    "iso_code": "EUR",
+    "symbol": "€",
+    "notes": "Uses EUR (Eurozone member)"
+  },
+  {
+    "country": "Belize",
+    "currency": "Belize Dollar",
+    "iso_code": "BZD",
+    "symbol": "$",
+    "notes": "Pegged 2:1 USD"
+  },
+  {
+    "country": "Benin",
+    "currency": "West African CFA Franc",
+    "iso_code": "XOF",
+    "symbol": "Fr",
+    "notes": "Shared currency (West African Union)"
+  },
+  {
+    "country": "Bhutan",
+    "currency": "Ngultrum",
+    "iso_code": "BTN",
+    "symbol": "Nu.",
+    "notes": "Pegged 1:1 INR"
+  },
+  {
+    "country": "Brazil",
+    "currency": "Brazilian Real",
+    "iso_code": "BRL",
+    "symbol": "R$",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Canada",
+    "currency": "Canadian Dollar",
+    "iso_code": "CAD",
+    "symbol": "$",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "China",
+    "currency": "Renminbi (Yuan)",
+    "iso_code": "CNY",
+    "symbol": "¥",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "India",
+    "currency": "Indian Rupee",
+    "iso_code": "INR",
+    "symbol": "₹",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Japan",
+    "currency": "Japanese Yen",
+    "iso_code": "JPY",
+    "symbol": "¥",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "United Kingdom",
+    "currency": "Pound Sterling",
+    "iso_code": "GBP",
+    "symbol": "£",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "United States",
+    "currency": "United States Dollar",
+    "iso_code": "USD",
+    "symbol": "$",
+    "notes": "World’s primary reserve currency"
+  },
+  {
+    "country": "South Africa",
+    "currency": "South African Rand",
+    "iso_code": "ZAR",
+    "symbol": "R",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Switzerland",
+    "currency": "Swiss Franc",
+    "iso_code": "CHF",
+    "symbol": "Fr",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "Turkey",
+    "currency": "Turkish Lira",
+    "iso_code": "TRY",
+    "symbol": "₺",
+    "notes": "Independent currency"
+  },
+  {
+    "country": "UAE",
+    "currency": "UAE Dirham",
+    "iso_code": "AED",
+    "symbol": "إ.د",
+    "notes": "Pegged to USD"
+  },
+  {
+    "country": "Zimbabwe",
+    "currency": "Zimbabwean Dollar",
+    "iso_code": "ZWL",
+    "symbol": "Z$",
+    "notes": "Reintroduced, history of instability"
+  }
+]
