@@ -63,34 +63,48 @@
                 >Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">About</a>
+              <a class="nav-link" href="#about">About</a>
+            </li>
+             <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                aria-label="Light Mode Change"
+                rel="noopener"
+                id="theme-toggle"
+                ><i class="fas"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="weatherIcon">
                Local weather
               </a>
             </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                aria-label="Visit our Instagram page (opens in a new tab)"
-                rel="noopener"
-                id="theme-toggle"
-                ><i class="fas fa-sun"></i
-              ></a>
-            </li>
-            <li class="nav-item"></li>
+            
           </ul>
         </div>
       </div>
     </nav>
     <!-- Weather Dropdown -->
     <div id="weatherMenu" class="hidden">
-      <p id="location">Loading...</p>
-      <p id="temperature"></p>
-      <p id="condition"></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+           <p id="location">Loading...</p>
+          </div>
+          <div class="col-6">
+            <p id="weatherType"></p>
+            <p id="condition"></p>
+          </div>
+          <hr>
+          <div class="col-12">
+             <p id="temperature"></p>
+             <p id="feelsLike"></p>
+      
+          </div>
+          <hr>
+        </div>
+      </div>
+     
     </div>
     <!-- Header with carousel -->
     <header>
@@ -152,7 +166,7 @@
     <!-- main element to hold all key sections of the home page. It is not part of the grid structure -->
     <main class="flex-fill">
       <!-- Services section -->
-      <div class="about section">
+      <div class="about section" id="about">
         <div class="container">
           <div class="row d_flex">
             <div class="col-md-12 col-lg-5">
@@ -163,15 +177,19 @@
             <div class="col-md-12 col-lg-7">
               <div class="titlepage">
                 <h2>
-                  <span class="yellow">ABOUT US</span><br />Welcome TO OUR
-                  DEGITALEX
+                  <span class="yellow">ABOUT US</span><br />
+                
                 </h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                </p>
-                <a class="read_more" href="#">Read More</a>
+                <p>  Welcome to our Currency Converter platform — your reliable destination for fast, accurate, and real-time currency exchange information.</p>
+     <details>
+  <summary style="cursor: pointer; color: #416a8e;">Read More</summary>
+  <p>
+   We are dedicated to simplifying global finance by providing users with up-to-date exchange rates for over 30 currencies worldwide. Whether you're traveling, shopping online, managing international business transactions, or simply tracking exchange trends, our tool helps you make informed financial decisions with ease.
+  </p><p>Our platform is built with modern technology to ensure speed, accuracy, and user-friendly experience across all devices including mobile, tablet, and desktop. We continuously improve our system to deliver reliable data sourced from trusted financial providers.
+ </p><p> At our core, we believe that access to accurate financial information should be simple, transparent, and accessible to everyone — anywhere in the world.
+  </p>
+</details>
+
               </div>
             </div>
           </div>
@@ -181,53 +199,9 @@
       <section id="country-currencies" class="section">
         <div class="container">
           <h2 class="display-6 text-center mb-4">Country-wise Currencies</h2>
-          <div class="row currency-grid">
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" aria-hidden="true" style="font-size: 2rem">
-                  🇺🇸
-                </div>
-                <h5 class="mb-0 mt-2">United States</h5>
-                <small class="text-secondary">US Dollar — USD — $</small>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" style="font-size: 2rem">🇪🇺</div>
-                <h5 class="mb-0 mt-2">Eurozone</h5>
-                <small class="text-secondary">Euro — EUR — €</small>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" style="font-size: 2rem">🇬🇧</div>
-                <h5 class="mb-0 mt-2">United Kingdom</h5>
-                <small class="text-secondary">Pound Sterling — GBP — £</small>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" style="font-size: 2rem">🇮🇳</div>
-                <h5 class="mb-0 mt-2">India</h5>
-                <small class="text-secondary">Indian Rupee — INR — ₹</small>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" style="font-size: 2rem">🇯🇵</div>
-                <h5 class="mb-0 mt-2">Japan</h5>
-                <small class="text-secondary">Yen — JPY — ¥</small>
-              </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3 mb-3">
-              <div class="currency-card p-3 text-center rounded shadow-sm">
-                <div class="flag" style="font-size: 2rem">🇦🇺</div>
-                <h5 class="mb-0 mt-2">Australia</h5>
-                <small class="text-secondary"
-                  >Australian Dollar — AUD — A$</small
-                >
-              </div>
-            </div>
+          <div class="row" id="currencyContainer"></div>
+          <div class="text-center mt-4">
+            <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
           </div>
         </div>
       </section>
@@ -246,7 +220,7 @@
                   aria-expanded="true"
                   aria-controls="faqOne"
                 >
-                  How accurate are the conversion rates?
+                 What is a currency converter?
                 </button>
               </h2>
               <div
@@ -256,9 +230,7 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  The built-in converter uses static example rates for instant
-                  client-side conversions. For production use, connect a
-                  reliable live rates API to ensure real market accuracy.
+                A currency converter is a tool that allows you to calculate the value of one currency in terms of another using current exchange rates.
                 </div>
               </div>
             </div>
@@ -272,7 +244,7 @@
                   aria-expanded="false"
                   aria-controls="faqTwo"
                 >
-                  Can I convert uncommon currencies?
+                  Are the exchange rates real-time?
                 </button>
               </h2>
               <div
@@ -282,9 +254,8 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  Yes — the input accepts any currency code. If a code is not
-                  recognised by the built-in list, you can add its rate to
-                  `assets/js/converter.js` or enable live-rate lookups.
+                  Yes, we aim to provide real-time or near real-time exchange rates sourced from trusted financial data providers.
+
                 </div>
               </div>
             </div>
@@ -298,7 +269,7 @@
                   aria-expanded="false"
                   aria-controls="faqThree"
                 >
-                  Where do you get rates from?
+                  Is this service free to use?
                 </button>
               </h2>
               <div
@@ -308,12 +279,83 @@
                 data-bs-parent="#faqAccordion"
               >
                 <div class="accordion-body">
-                  I can integrate APIs like ExchangeRate-API, Fixer, or
-                  OpenExchangeRates. Tell me which provider you prefer and I
-                  will add server-side or client-side fetching with caching.
+                  Yes, our currency converter is completely free for all users.
                 </div>
               </div>
             </div>
+           <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqFour"
+                  aria-expanded="false"
+                  aria-controls="faqFour"
+                >
+                 How accurate are the conversions?
+                </button>
+              </h2>
+              <div
+                id="faqFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="faqHeadingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Our exchange rates are highly accurate and regularly updated. However, actual rates may slightly vary depending on banks or service providers.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqFive"
+                  aria-expanded="false"
+                  aria-controls="faqFive"
+                >
+                   How often are exchange rates updated?
+                </button>
+              </h2>
+              <div
+                id="faqFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="faqHeadingFive"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Exchange rates are typically updated every few seconds to minutes depending on market activity.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqHeadingSix">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faqSix"
+                  aria-expanded="false"
+                  aria-controls="faqSix"
+                >
+                  Does this website work on mobile devices?
+                </button>
+              </h2>
+              <div
+                id="faqSix"
+                class="accordion-collapse collapse"
+                aria-labelledby="faqHeadingSix"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Yes, our website is fully responsive and works seamlessly on mobile phones, tablets, and desktops.
+                </div>
+              </div>
+            </div>
+          
           </div>
         </div>
       </section>

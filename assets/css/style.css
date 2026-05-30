@@ -155,22 +155,43 @@ datalist {
   .currency-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,0,0,0.18); }
   .currency-card .flag { font-size: 1.8rem; }
   .currency-card h5 { margin-bottom: 0; }
+  .currency-card .currency-symbol { 
+    font-size: 2.5rem; 
+    font-weight: 600;
+    color: var(--highlight-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #loadMoreBtn {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    color: white;
+    padding: 12px 40px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  #loadMoreBtn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
 
   .bg-light-muted { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); }
   .badge.bg-secondary { background: rgba(255,255,255,0.06); color: var(--dark-theme); border-radius: 999px; padding: .6rem .9rem; margin: .25rem; }
 
   /* FAQ tweaks */
-  #faq{
-     background: url(../images/bg-1.jpg);
-     background-repeat: no-repeat;
-     background-size: 100% 100%;
-     padding-top: 80px;
-  }
+ 
   .accordion-button { background: rgba(255,255,255,0.02); color: var(--dark-theme); }
   .accordion-button:not(.collapsed) { background: linear-gradient(90deg, rgba(65,106,142,0.12), rgba(122,159,194,0.08)); color: var(--dark-theme); }
 
   @media (max-width: 576px) {
+    
+
     .currency-card { padding: 1rem; }
+    .currency-card .currency-symbol { font-size: 2rem; }
     .badge { font-size: .85rem; }
   }
 
@@ -559,12 +580,7 @@ body[data-theme="light"]   {
 
 /** about section **/
 
-.about {
-     background: url(../images/bg-1.jpg);
-     background-repeat: no-repeat;
-     background-size: 100% 100%;
-     padding-top: 80px;
-}
+
 
 .about .titlepage {
      text-align: left;
@@ -611,15 +627,16 @@ body[data-theme="light"]   {
 }
 
 #weatherMenu {
-  position: absolute;
-  top: 100px;
-  right: 10px;
-  background: white;
-  color: black;
-  padding: 15px;
-  border-radius: 8px;
-  width: 200px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    background: linear-gradient(180deg, var(--light-theme), rgba(255, 255, 255, 0.65));
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    width: 25%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999999;
 }
 
 .hidden {
@@ -723,8 +740,23 @@ text-align: left;
 /* 🌞 LIGHT MODE */
 /* ================= */
 
-body[data-theme="light"] #navbar, #footer-section {
-  background-color: #969799 !important;
+body[data-theme="light"]  #footer-section {
+  background-color: #969799 ;
+}
+body[data-theme="light"] #navbar{
+  background-color: #969799 !important ;
+}
+body[data-theme="dark"] .about{
+     background: url(../images/bg-1.jpg);
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     padding-top: 80px;
+}
+body[data-theme="dark"] #faq{
+     background: url(../images/bg-1.jpg);
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     padding-top: 80px;
 }
 
 
@@ -732,7 +764,50 @@ body[data-theme="light"] #navbar, #footer-section {
 /* ================= */
 /* 🌙 DARK MODE */
 /* ================= */
-body[data-theme="dark"] #navbar, #footer-section {
-  background-color: var(--primary-color) !important;
+body[data-theme="dark"]  #footer-section {
+  background-color: var(--primary-color) ;
     color: white;
 }
+body[data-theme="dark"] #navbar {
+  background-color: var(--primary-color) ;
+    color: white;
+}
+body[data-theme="light"] .about {
+  background-color: var(--highlight-color);
+    color: white;
+}
+body[data-theme="light"] #faq {
+  background-color: var(--highlight-color);
+    color: white;
+}
+body[data-theme="light"] .titlepage p {
+    color: white;
+}
+@media (max-width: 576px) {
+  /* Small phones */
+   #weatherMenu {
+    top: 63px;
+    right: 0;
+    left: 138px;
+    width: 63%;
+   }
+   #header{
+    padding: 0px;
+   }
+}
+
+@media (max-width: 768px) {
+  /* Most phones (including iPhone) */
+   #weatherMenu {
+    top: 63px;
+    right: 0;
+    left: 138px;
+    width: 63%;
+   }
+   #header{
+    padding: 0px;
+   }
+}
+
+
+
