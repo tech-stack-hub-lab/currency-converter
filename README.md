@@ -94,6 +94,12 @@ Chart dynamically updates using JavaScript
   - [Typography](#typography)
   - [Wireframes](#wireframes)
 
+# 📐 Wireframes
+The following wireframe shows the full homepage layout for desktop, laptop, and mobile devices in one unified illustration.
+
+![Responsive Wireframe](assets/images/wireframes/wireframe-full-responsive.svg)
+
+This image is stored in `assets/images/wireframes` and depicts the complete page structure, including navigation, hero converter, chart, about section, currency cards, FAQ, and footer for each screen size.
 
 # ✅ Testing & Validation (LO2)
 
