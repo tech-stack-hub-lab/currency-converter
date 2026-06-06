@@ -1,378 +1,310 @@
-# currency-converter
+# Currency Converter 🌱
+Convert currencies instantly using live exchange rates from around the world.
 
-A single-page currency converter web app with live exchange rates and local weather information.
-
-## Features
-
-- Real-time currency conversion using exchangerate.host
-- Dropdown input selection for source and target currencies
-- Live conversion result with exchange rate details
-- Light/dark theme toggle with localStorage persistence
-- Local weather display using Open-Meteo and geolocation
-- Responsive layout for mobile, tablet, and desktop
-
-## Usage
-
-1. Open `index.html` in your browser.
-2. Enter the amount you want to convert.
-3. Select the source currency and the target currency.
-4. Click **Convert** to see the live result.
-5. Allow location access to display your current weather.
-
-## Project files
-
-- `index.html` — markup and application structure
-- `styles.css` — project styles and responsive theme support
-- `script.js` — API fetch functions, conversion logic, weather display, and theme toggle
-
-## APIs used
-
-- Exchange rates: [https://api.exchangerate.host](https://api.exchangerate.host)
-- Weather data: [https://api.open-meteo.com](https://api.open-meteo.com)
-- Reverse geocoding: [https://geocode.maps.co](https://geocode.maps.co)
-
-## Deployment
-
-Deploy this as a static website on GitHub Pages or any static hosting provider. Ensure `index.html`, `styles.css`, and `script.js` remain in the same folder.
-
-## Notes
-
-- If the browser blocks geolocation or access is denied, weather defaults to London.
-- Conversion results are fetched live on demand, so they reflect current rates.
-
+This currency converter allows you to quickly and accurately convert values between different currencies. Simply enter an amount, select your currencies, and get real-time results powered by an external API.
 ---
+**View Site** → [Currency Converter]
+(https://tech-stack-hub-lab.github.io/currency-converter/)
 
-## Wireframes
+## 📚 Table of Contents
 
-Responsive layout across all screen sizes based on Bootstrap 5 grid system.
+- [📌 Project Overview](#-project-overview)  
+- [🎯 User Value](#-user-value)  
+- [🚀 Features](#-features)  
+- [🖥️ Technologies Used](#️-technologies-used)  
+- [🎨 Front-End Design & Interactivity (LO1)](#-front-end-design--interactivity-lo1)    - [Colour Palette](#colour-palette)
+        - [Typography](#typography)
+        - [Wireframes](#wireframes)
+- [✅ Testing & Validation (LO2)](#-testing--validation-lo2)  
+- [☁️ Deployment & Version Control (LO3)](#️-deployment--version-control-lo3)  
+- [📚 Documentation & Code Quality (LO4)](#-documentation--code-quality-lo4)  
+- [⚙️ JavaScript Functionality (LO5)](#️-javascript-functionality-lo5)  
+- [🤖 AI Usage & Reflection (LO6)](#-ai-usage--reflection-lo6)  
+- [📦 Installation & Setup](#-installation--setup)  
+- [🚀 Deployment Instructions](#-deployment-instructions)  
+- [📸 Screenshots](#-screenshots)  
+- [🔗 API Attribution](#-api-attribution)  
+- [📁 Project Structure](#-project-structure)  
+- [👤 User Stories](#-user-stories)  
+- [🚀 Future Improvements](#-future-improvements)  
 
-### Mobile Layout (< 576px)
 
-```
-┌─────────────────────────────────┐
-│  ☰ LOGO                         │ <- Fixed Navbar
-├─────────────────────────────────┤
-│                                 │
-│        HEADER SECTION           │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │  FORM INPUTS            │   │
-│  │  - Email Input          │   │
-│  │  - Password Input       │   │
-│  │  - Address Inputs       │   │
-│  │  - City / State / Zip   │   │
-│  │  - Checkbox             │   │
-│  │  - Sign In Button       │   │
-│  └─────────────────────────┘   │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│   LIVE CHARTS SECTION           │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │    Sales Overview       │   │
-│  │   [Dropdown: Mar 2023]  │   │
-│  │                         │   │
-│  │    [Chart Renders]      │   │
-│  │                         │   │
-│  └─────────────────────────┘   │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│      ABOUT US SECTION           │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │   About Image           │   │
-│  │   (Full Width)          │   │
-│  └─────────────────────────┘   │
-│                                 │
-│  Who Are We? (Heading)          │
-│  ─────────────────────────      │
-│  About description paragraph    │
-│  Longer descriptive text...     │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │ ⚙ Versatile Brand       │   │
-│  │                         │   │
-│  │ Description text...     │   │
-│  └─────────────────────────┘   │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │ 🔥 Digital Agency       │   │
-│  │                         │   │
-│  │ Description text...     │   │
-│  └─────────────────────────┘   │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│  COUNTRY WISE CURRENCY          │
-│  (Heading)                      │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│      FOOTER SECTION             │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │   LOGO                  │   │
-│  ├─────────────────────────┤   │
-│  │  About  FAQ  Sitemap    │   │
-│  ├─────────────────────────┤   │
-│  │  © 2026 Currency Conv.  │   │
-│  └─────────────────────────┘   │
-│                                 │
-│  ┌─────────────────────────┐   │
-│  │  📱 f 𝕏 Social Links   │   │
-│  │                         │   │
-│  │ Instagram Facebook X    │   │
-│  └─────────────────────────┘   │
-│                                 │
-└─────────────────────────────────┘
-```
+- [Lighthouse Performance](#lighthouse-performance)
+---
+# 📌 Project Overview
+This project is a single-page web application (SPA) that allows users to convert currencies in real time. The application also integrates live weather data, provides interactive charts, and includes a dark/light theme toggle.
+It is built using HTML, CSS, JavaScript, and external APIs, with a strong focus on user interaction, responsiveness, and accessibility.
 
-### Tablet Layout (576px - 992px)
+# 🎯 User Value
+The application provides users with:
 
-```
-┌────────────────────────────────────────────────┐
-│  ☰ LOGO                                        │ <- Fixed Navbar
-├────────────────────────────────────────────────┤
-│                                                │
-│             HEADER SECTION                     │
-│                                                │
-│  ┌──────────────────────────────────────────┐ │
-│  │           FORM INPUTS                    │ │
-│  │  ┌──────────┐  ┌──────────┐              │ │
-│  │  │  Email   │  │ Password │              │ │
-│  │  └──────────┘  └──────────┘              │ │
-│  │  ┌──────────────────────────────────┐   │ │
-│  │  │         Address                  │   │ │
-│  │  └──────────────────────────────────┘   │ │
-│  │  ┌──────────────────────────────────┐   │ │
-│  │  │      Address 2                   │   │ │
-│  │  └──────────────────────────────────┘   │ │
-│  │  ┌─────────┐ ┌──────┐  ┌────┐           │ │
-│  │  │  City   │ │State │  │Zip │           │ │
-│  │  └─────────┘ └──────┘  └────┘           │ │
-│  │  [✓] Check me out      [Sign in Btn]    │ │
-│  └──────────────────────────────────────────┘ │
-│                                                │
-├────────────────────────────────────────────────┤
-│                                                │
-│          LIVE CHARTS SECTION                   │
-│                                                │
-│  ┌──────────────────────────────────────────┐ │
-│  │         Sales Overview                   │ │
-│  │  [Dropdown: Mar 2023]                    │ │
-│  │                                          │ │
-│  │          [Chart Renders Here]            │ │
-│  │                                          │ │
-│  └──────────────────────────────────────────┘ │
-│                                                │
-├────────────────────────────────────────────────┤
-│                                                │
-│           ABOUT US SECTION                     │
-│                                                │
-│  ┌──────────────────┐  ┌───────────────────┐ │
-│  │  About Image     │  │ Who Are We?       │ │
-│  │  (Left Column)   │  │ ───────────────   │ │
-│  │                  │  │ Description...    │ │
-│  │                  │  │                   │ │
-│  │                  │  │ ⚙ Versatile Brand │ │
-│  │                  │  │ 🔥 Digital Agency │ │
-│  │                  │  │                   │ │
-│  │                  │  │                   │ │
-│  └──────────────────┘  └───────────────────┘ │
-│                                                │
-├────────────────────────────────────────────────┤
-│                                                │
-│     COUNTRY WISE CURRENCY SECTION              │
-│     (Heading)                                  │
-│                                                │
-├────────────────────────────────────────────────┤
-│                                                │
-│            FOOTER SECTION                      │
-│                                                │
-│  ┌──────────────────────────────────────────┐ │
-│  │  LOGO          |    About FAQ Sitemap    │ │
-│  │                |    © 2026 Currency Conv │ │
-│  │                |                         │ │
-│  │                |    📱 f 𝕏 Social Links  │ │
-│  └──────────────────────────────────────────┘ │
-│                                                │
-└────────────────────────────────────────────────┘
-```
+Fast and accurate currency conversion
+Real-time exchange rate updates
+Local weather information based on location
+A responsive and easy-to-use interface
+Customisable dark/light mode for better usability
 
-### Desktop Layout (992px - 1200px)
 
-```
-┌──────────────────────────────────────────────────────────┐
-│  LOGO  Home  About  Language Change  Weather  Mode      │ <- Fixed Navbar
-├──────────────────────────────────────────────────────────┤
-│                                                          │
-│                   HEADER SECTION                         │
-│                                                          │
-│  ┌────────────────────────────────────────────────────┐ │
-│  │                   FORM INPUTS                      │ │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────────────┐  │ │
-│  │  │  Email   │ │ Password │ │ Address          │  │ │
-│  │  └──────────┘ └──────────┘ └──────────────────┘  │ │
-│  │  ┌────────────────────────────────────────────┐  │ │
-│  │  │         Address 2                          │  │ │
-│  │  └────────────────────────────────────────────┘  │ │
-│  │  ┌─────────┐ ┌──────────┐ ┌────┐               │ │
-│  │  │  City   │ │  State   │ │Zip │               │ │
-│  │  └─────────┘ └──────────┘ └────┘               │ │
-│  │  [✓] Check    [Sign in Button]                 │ │
-│  └────────────────────────────────────────────────┘ │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│             LIVE CHARTS SECTION                      │
-│                                                      │
-│  ┌──────────────────────────────────────────────┐   │
-│  │      Sales Overview     [Dropdown: Mar 2023] │   │
-│  │                                              │   │
-│  │           [Chart Renders Here]               │   │
-│  │                                              │   │
-│  │                                              │   │
-│  └──────────────────────────────────────────────┘   │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│              ABOUT US SECTION                        │
-│                                                      │
-│  ┌──────────────────┐  ┌──────────────────────────┐ │
-│  │                  │  │ Who Are We?              │ │
-│  │  About Image     │  │ ─────────────────        │ │
-│  │                  │  │ Description paragraph... │ │
-│  │  (50% width)     │  │                          │ │
-│  │                  │  │ Longer text content...   │ │
-│  │                  │  │                          │ │
-│  │                  │  │ ┌─────────────────────┐  │ │
-│  │                  │  │ │ ⚙ Versatile Brand   │  │ │
-│  │                  │  │ │                     │  │ │
-│  │                  │  │ │ Description text... │  │ │
-│  │                  │  │ └─────────────────────┘  │ │
-│  │                  │  │                          │ │
-│  │                  │  │ ┌─────────────────────┐  │ │
-│  │                  │  │ │ 🔥 Digital Agency   │  │ │
-│  │                  │  │ │                     │  │ │
-│  │                  │  │ │ Description text... │  │ │
-│  │                  │  │ └─────────────────────┘  │ │
-│  │                  │  │                          │ │
-│  └──────────────────┘  └──────────────────────────┘ │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│          COUNTRY WISE CURRENCY SECTION               │
-│          (Heading)                                   │
-│                                                      │
-├──────────────────────────────────────────────────────┤
-│                                                      │
-│               FOOTER SECTION                         │
-│                                                      │
-│  ┌────────────────────────────────────────────────┐ │
-│  │  LOGO                              About       │ │
-│  │                                    FAQ         │ │
-│  │                                    Sitemap     │ │
-│  │                                    © 2026      │ │
-│  │                                    Currency    │ │
-│  │                 📱 f 𝕏                Conv.     │ │
-│  └────────────────────────────────────────────────┘ │
-│                                                      │
-└──────────────────────────────────────────────────────┘
-```
+# 🚀 Features
 
-### Large Desktop Layout (1200px+)
+✅ Currency conversion using live API data
+✅ Weather display using geolocation
+✅ Dark / Light theme toggle
+✅ Exchange rate chart visualization (script.js)
+✅ Currency swap functionality
+✅ Dynamic dropdown population from JSON
+✅ Currency cards with “Load More” feature
+✅ Responsive design for all devices
+✅ FAQ section with accordion UI
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│  LOGO  Home  About  Language Change  Weather  Mode (RightAlign)│ <- Fixed Navbar
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│                    HEADER SECTION                              │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────────┐ │
-│  │                      FORM INPUTS                         │ │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────────────────────┐ │ │
-│  │  │  Email   │ │ Password │ │        Address           │ │ │
-│  │  └──────────┘ └──────────┘ └──────────────────────────┘ │ │
-│  │  ┌──────────────────────────────────────────────────────┐ │ │
-│  │  │              Address 2                               │ │ │
-│  │  └──────────────────────────────────────────────────────┘ │ │
-│  │  ┌─────────┐ ┌──────────┐ ┌────┐                        │ │
-│  │  │  City   │ │  State   │ │Zip │   [Sign in Button]    │ │
-│  │  └─────────┘ └──────────┘ └────┘                        │ │
-│  │  [✓] Check me out                                       │ │
-│  └──────────────────────────────────────────────────────────┘ │
-│                                                                │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│                LIVE CHARTS SECTION                             │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────────┐ │
-│  │     Sales Overview          [Dropdown: Mar 2023]         │ │
-│  │                                                          │ │
-│  │              [Chart Renders Here Full Width]             │ │
-│  │                                                          │ │
-│  │                                                          │ │
-│  └──────────────────────────────────────────────────────────┘ │
-│                                                                │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│                 ABOUT US SECTION                               │
-│                                                                │
-│  ┌────────────────────┐  ┌──────────────────────────────────┐ │
-│  │                    │  │   Who Are We?                    │ │
-│  │  About Image       │  │   ─────────────                  │ │
-│  │                    │  │   Description paragraph text...  │ │
-│  │  (Left 50%)        │  │                                  │ │
-│  │                    │  │   Longer descriptive content...  │ │
-│  │                    │  │                                  │ │
-│  │                    │  │   ┌────────────┐  ┌────────────┐ │ │
-│  │                    │  │   │ ⚙ Versatile│  │ 🔥 Digital │ │ │
-│  │                    │  │   │   Brand    │  │   Agency   │ │ │
-│  │                    │  │   │            │  │            │ │ │
-│  │                    │  │   │ Description│  │ Description│ │ │
-│  │                    │  │   │ text...    │  │ text...    │ │ │
-│  │                    │  │   └────────────┘  └────────────┘ │ │
-│  │                    │  │ (Right 50%)                      │ │
-│  └────────────────────┘  └──────────────────────────────────┘ │
-│                                                                │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│           COUNTRY WISE CURRENCY SECTION                        │
-│           (Heading)                                            │
-│                                                                │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│                  FOOTER SECTION                                │
-│                                                                │
-│  ┌───────────────────────────────────────────────────────────┐ │
-│  │  LOGO (Left)           Contact Links    Social Icons      │ │
-│  │                        About             📱 f 𝕏          │ │
-│  │                        FAQ                                │ │
-│  │                        Sitemap                            │ │
-│  │                        © 2026 Currency Converter          │ │
-│  └───────────────────────────────────────────────────────────┘ │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
 
-### Breakpoints Used
+# 🖥️ Technologies Used
 
-- **Mobile (XS):** < 576px
-- **Tablet (SM/MD):** 576px - 991px
-- **Desktop (LG):** 992px - 1199px
-- **Large Desktop (XL):** 1200px - 1399px
-- **Extra Large (XXL):** ≥ 1400px
+HTML5 – Semantic structure and layout
+CSS3 – Styling, Flexbox, responsiveness
+JavaScript (ES6) – Logic and interactivity
+Bootstrap 5 – UI components and layout
+Data visualization by using Chart
+Font Awesome – Icons
+APIs:
 
-### Key Responsive Features
+OpenWeather API (weather data)
+Exchange Rate API (currency conversion)
 
-| Component | Mobile | Tablet | Desktop | XL/XXL |
-|-----------|--------|--------|---------|--------|
-| Navbar | Collapsed (☰) | Collapsed | Expanded | Expanded |
-| Header Form | 1 Column | 2 Columns | 2 Columns | 2-3 Columns |
-| About Section | Image Full Width | Image Left 40% | Image Left 40% | Image Left 50% |
-| Features | 1 Column | 1 Column | 2 Columns | 2 Columns |
-| Footer | Stacked Vertical | Stacked | 2 Columns | Flex Row |
-| Spacing | Reduced (2rem) | Medium (3rem) | Large (4rem) | Extra (4rem+) |
+
+LocalStorage – Save theme and chart history
+
+
+# 🎨 Front-End Design & Interactivity (LO1)
+
+Semantic HTML elements such as <header>, <nav>, <main>, <section>, and <footer> are used
+Accessible navigation with descriptive labels and ARIA attributes
+Clear UI with structured sections: converter, weather, about, FAQ
+Responsive layout using Bootstrap grid and media queries
+Interactive features:
+
+Theme toggle using DOM manipulation
+Dynamic weather dropdown
+Currency conversion updates instantly
+
+
+Chart dynamically updates using JavaScript
+- [Design](#design)
+  - [Colour Palette](#colour-palette)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+
+
+# ✅ Testing & Validation (LO2)
+
+HTML validated using W3C Validator
+## assets/validation-result/html-validation.png
+CSS validated using Jigsaw Validator
+JavaScript tested to ensure:
+
+No syntax errors
+No console errors
+
+
+All navigation links tested and working correctly
+
+
+# ☁️ Deployment & Version Control (LO3)
+
+Project deployed using a cloud hosting platform (e.g., GitHub Pages)
+Live version matches development version
+GitHub used for:
+
+Version control
+Commit history tracking
+
+
+Code is clean with no unused or commented sections
+
+# 📚 Documentation & Code Quality (LO4)
+
+Code is separated into:
+
+index.html
+style.css
+script.js
+
+
+JavaScript is modular and organised into functions
+Comments added for readability
+Consistent naming conventions used
+External APIs clearly referenced
+
+# ⚙️ JavaScript Functionality (LO5)
+## Theme Toggle
+
+Uses localStorage to save user preference
+Updates UI and icon dynamically
+
+## Weather Feature
+
+Uses geolocation API
+Fetches weather data from OpenWeather API
+Displays:
+
+Location
+Temperature
+Condition
+
+
+## Updates weather icon dynamically
+
+Currency Converter
+
+Fetches exchange rates using API
+Handles:
+
+Invalid input
+Missing values
+
+
+## Displays:
+
+Converted value
+Exchange rate
+Last updated timestamp
+
+
+
+## Chart Functionality
+
+Built using Chart.js
+Tracks exchange rate history
+Stores data in localStorage
+Displays trends for different time ranges
+
+Currency Cards
+
+Data loaded from JSON file
+“Load More” button implemented using loop
+
+Navigation
+
+Smooth scrolling
+Auto-collapse mobile navbar
+
+
+##  🤖 AI Usage & Reflection (LO6)
+AI Usage
+
+Used for:
+
+Code generation
+Debugging issues
+Improving UI/UX
+
+
+
+## Reflection
+AI tools helped speed up development and improved code quality. However, manual testing and understanding were essential to ensure correctness. AI acted as a support tool rather than replacing problem-solving skills.
+
+## 📦 Installation & Setup
+
+Clone repository:
+
+Shellgit clone https://github.com/your-username/currency-converter.gitShow more lines
+
+Open project:
+
+Shellcd currency-converterShow more lines
+
+Run:
+
+
+Open index.html in browser
+Or use Live Server (VS Code)
+
+
+## 🚀 Deployment Instructions
+GitHub Pages:
+
+Push code to GitHub
+Go to Settings > Pages
+Select branch (main)
+Save and get live URL
+
+
+## 📸 Screenshots
+(Add screenshots here)
+
+Currency converter UI
+Weather dropdown
+Chart view
+Dark / Light mode
+
+
+## 🔗 API Attribution
+
+Weather API: OpenWeatherMap
+Currency API: ExchangeRate API
+
+
+## 📁 Project Structure
+currency-converter/
+│
+├── index.html
+├── assets/
+│   ├── css/style.css
+│   ├── js/script.js
+│   ├── images/
+│   └── json/currency.json
+└── README.md
+
+
+## 👤 User Stories
+
+As a user, I want to convert currency so that I can check exchange values
+As a user, I want real-time rates so that results are accurate
+As a user, I want to swap currencies quickly
+As a user, I want a chart view to understand trends
+As a user, I want weather updates for convenience
+As a user, I want dark mode for better usability
+As a mobile user, I want responsive design
+
+
+## 🚀 Future Improvements
+
+Add currency favourites
+Improve chart with real historical API data
+Add multi-language support
+Enhance accessibility (keyboard navigation)
+Add offline caching
+
+
+
+
+### Screen Size Variation
+
+- **Mobile** – compact navigation, stacked cards, and touch-friendly buttons.
+- **Tablet** – balanced grid layout, visible charts, and responsive stepper controls.
+- **Desktop** – full dashboard view with chart grid, export modal, and wider content panels.
+
+
+
+
+## ✅ Accessibility & Responsiveness
+
+- Uses semantic HTML and accessible button/label patterns.
+- Includes `tabindex` support for keyboard navigation.
+- Uses `loading="lazy"` for images to speed up page load.
+- Applies responsive breakpoints for mobile, tablet, and desktop layouts.
+
+## 🚦 Lighthouse Performance
+
+- **Performance**: Optimized for fast interactions with lazy-loaded assets and minimal DOM overhead.
+- **Accessibility**: Focuses on keyboard navigation, form labeling, and readable contrast.
+- **Best Practices**: Uses modern HTML, avoids duplicate script loads, and leverages CDN resources.
+- **SEO**: Includes meta descriptions, page titles, and meaningful content structure.
+
+> Recommended: Run Chrome Lighthouse for exact scores and capture reports for mobile and desktop performance.
+
+![alt text](image-12.png)
+
+![alt text](image-13.png)
+
+
