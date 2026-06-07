@@ -1,316 +1,274 @@
 # Currency Converter 🌱
-Convert currencies instantly using live exchange rates from around the world.
+Convert currencies instantly with a responsive live exchange rate dashboard and local weather insights.
 
-This currency converter allows you to quickly and accurately convert values between different currencies. Simply enter an amount, select your currencies, and get real-time results powered by an external API.
----
-**View Site** → [Currency Converter]
-(https://tech-stack-hub-lab.github.io/currency-converter/)
+**View Site** → [Currency Converter](https://tech-stack-hub-lab.github.io/currency-converter/)
+![Screenshot of the game on different devices](documentation/mockup.png)
 
 ## 📚 Table of Contents
 
-- [📌 Project Overview](#-project-overview)  
-- [🎯 User Value](#-user-value)  
-- [🚀 Features](#-features)  
-- [🖥️ Technologies Used](#️-technologies-used)  
-- [🎨 Front-End Design & Interactivity (LO1)](#-front-end-design--interactivity-lo1)    - [Colour Palette](#colour-palette)
-        - [Typography](#typography)
-        - [Wireframes](#wireframes)
-- [✅ Testing & Validation (LO2)](#-testing--validation-lo2)  
-- [☁️ Deployment & Version Control (LO3)](#️-deployment--version-control-lo3)  
-- [📚 Documentation & Code Quality (LO4)](#-documentation--code-quality-lo4)  
-- [⚙️ JavaScript Functionality (LO5)](#️-javascript-functionality-lo5)  
-- [🤖 AI Usage & Reflection (LO6)](#-ai-usage--reflection-lo6)  
-- [📦 Installation & Setup](#-installation--setup)  
-- [🚀 Deployment Instructions](#-deployment-instructions)  
-- [📸 Screenshots](#-screenshots)  
-- [🔗 API Attribution](#-api-attribution)  
-- [📁 Project Structure](#-project-structure)  
-- [👤 User Stories](#-user-stories)  
-- [🚀 Future Improvements](#-future-improvements)  
-
-
+- [📌 Project Overview](#-project-overview)
+- [🎯 User Stories](#-user-stories)
+- [🚀 Features](#-features)
+- [🖥️ Technologies Used](#️-technologies-used)
+- [🎨 Front-End Design & Interactivity (LO1)](#-front-end-design--interactivity-lo1)
+  - [Colour Palette](#colour-palette)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+- [✅ Testing & Validation (LO2)](#-testing--validation-lo2)
+- [☁️ Deployment & Version Control (LO3)](#️-deployment--version-control-lo3)
+- [📚 Documentation & Code Quality (LO4)](#-documentation--code-quality-lo4)
+- [⚙️ JavaScript Functionality (LO5)](#️-javascript-functionality-lo5)
+- [🤖 AI Usage & Reflection (LO6)](#-ai-usage--reflection-lo6)
+- [📦 Installation & Setup](#-installation--setup)
+- [🚀 Deployment Instructions](#-deployment-instructions)
+- [📸 Screenshots](#-screenshots)
+- [🔗 API Attribution](#-api-attribution)
+- [📁 Project Structure](#-project-structure)
+- [👤 User Stories](#-user-stories)
+- [🚀 Future Improvements](#-future-improvements)
 - [Lighthouse Performance](#lighthouse-performance)
+
 ---
+
 # 📌 Project Overview
-This project is a single-page web application (SPA) that allows users to convert currencies in real time. The application also integrates live weather data, provides interactive charts, and includes a dark/light theme toggle.
-It is built using HTML, CSS, JavaScript, and external APIs, with a strong focus on user interaction, responsiveness, and accessibility.
 
-# 🎯 User Value
-The application provides users with:
+Currency Converter is a responsive single-page web application built to convert currencies with real-time exchange data and weather context. The design focuses on clean layout, responsive behavior, and fast user interaction across desktop, tablet, and mobile.
 
-Fast and accurate currency conversion
-Real-time exchange rate updates
-Local weather information based on location
-A responsive and easy-to-use interface
-Customisable dark/light mode for better usability
+
+
+## 🧾 User Stories
+
+### 🌙 Theme Feature
+- As a user, I want to toggle between dark and light mode so that I can use the app comfortably in different lighting conditions.
+- As a returning user, I want my theme preference saved so that I don’t need to change it every time.
+
+---
+
+### 💱 Currency Converter
+- As a user, I want to convert currencies in real time so that I can quickly check exchange values.
+- As a user, I want to select different currencies so that I can convert between any countries.
+- As a user, I want to see the conversion rate and last updated time so that I can trust the accuracy.
+
+---
+
+### 🔄 Swap Function
+- As a user, I want to swap currencies instantly so that I can save time when reversing conversions.
+
+---
+
+### 📊 Chart Feature
+- As a user, I want to see exchange rate trends in a chart so that I can understand currency changes over time.
+- As a user, I want to change the time range (week/month/year) so that I can analyse trends easily.
+
+---
+
+### 🌦️ Weather Feature
+- As a user, I want to see my local weather so that I can stay informed without leaving the app.
+- As a user, I want clear weather icons and temperature so that the data is easy to understand.
+
+---
+
+### 📂 Currency List / Cards
+- As a user, I want to browse available currencies so that I can learn about different world currencies.
+- As a user, I want a “Load More” option so that the page stays clean and fast.
+
+---
+
+### ⚠️ Error Handling
+- As a user, I want clear error messages when I enter invalid input so that I know how to fix it.
+- As a user, I want the app to handle API errors smoothly so that it doesn’t crash.
+
+---
+
+### 📱 Responsiveness & Navigation
+- As a mobile user, I want the app to work on my device so that I can use it anywhere.
+- As a user, I want smooth navigation so that I can move between sections easily.
 
 
 # 🚀 Features
 
-✅ Currency conversion using live API data
-✅ Weather display using geolocation
-✅ Dark / Light theme toggle
-✅ Exchange rate chart visualization (script.js)
-✅ Currency swap functionality
-✅ Dynamic dropdown population from JSON
-✅ Currency cards with “Load More” feature
-✅ Responsive design for all devices
-✅ FAQ section with accordion UI
-
+- Live currency conversion and swap controls
+- Weather panel with conditions, temperature, and feels-like data
+- Responsive chart section for exchange trends
+- Country currency overview cards
+- About section with informative layout
+- Expandable FAQ-style panels for user information
+- Light/dark ready interface structure
+- Clean navigation and accessible mobile menu behavior
 
 # 🖥️ Technologies Used
 
-HTML5 – Semantic structure and layout
-CSS3 – Styling, Flexbox, responsiveness
-JavaScript (ES6) – Logic and interactivity
-Bootstrap 5 – UI components and layout
-Data visualization by using Chart
-Font Awesome – Icons
-APIs:
-
-OpenWeather API (weather data)
-Exchange Rate API (currency conversion)
-
-
-LocalStorage – Save theme and chart history
-
+- HTML5 for semantic structure
+- CSS3 for responsive styling and layout
+- JavaScript (ES6) for interactivity and API integration
+- Bootstrap 5 for grid responsiveness and components
+- Font Awesome for icons and UI markers
+- Chart.js for trend visualization support
+- OpenWeather API for weather data
+- Exchange rate API for currency values
+- LocalStorage for theme and state persistence
 
 # 🎨 Front-End Design & Interactivity (LO1)
 
-Semantic HTML elements such as <header>, <nav>, <main>, <section>, and <footer> are used
-Accessible navigation with descriptive labels and ARIA attributes
-Clear UI with structured sections: converter, weather, about, FAQ
-Responsive layout using Bootstrap grid and media queries
-Interactive features:
+The UI emphasizes a modular dashboard with clear sections and responsive grouping.
 
-Theme toggle using DOM manipulation
-Dynamic weather dropdown
-Currency conversion updates instantly
+## Colour Palette
 
+**Dark mode**
 
-Chart dynamically updates using JavaScript
-- [Design](#design)
-  - [Colour Palette](#colour-palette)
-  - [Typography](#typography)
-  - [Wireframes](#wireframes)
+| Role | Hex |
+|------|-----|
+| Background | `#000000` |
+| Body text | `#ccffcc` |
+| Glow accent | `#00ff00` |
+| Player name / commands | `#00e5ff` |
+| Weather / theme button | `#ffffff` |
+| Game over / victory | `#ff2222` |
+| Top bar border | `#333333` |
 
-# 📐 Wireframes
-The following wireframe shows the full homepage layout for desktop, laptop, and mobile devices in one unified illustration.
+**Light mode**
 
-![Responsive Wireframe](assets/images/wireframes/wireframe-full-responsive.svg)
+| Role | Hex |
+|------|-----|
+| Background | `#f5f0e1` |
+| Body text | `#1a1a1a` |
+| Weather / theme button | `#8b0000` |
+| Player name / commands | `#007700` |
 
-This image is stored in `assets/images/wireframes` and depicts the complete page structure, including navigation, hero converter, chart, about section, currency cards, FAQ, and footer for each screen size.
+![Behram's Interactive Fiction Colour Palette](documentation/color-palette.png)
+
+## Typography
+
+- Simple, readable text hierarchy
+- Bold headings for section titles and UI labels
+- Smaller body text for field and helper content
+- Responsive typography sizing across breakpoints
+The project uses one display family from [Google Fonts](https://fonts.google.com/), loaded in `index.html`.
+
+## Wireframes
+
+The wireframes show desktop, tablet, and mobile layout structure with the updated screenshot-style design.
+
+![Wireframes](assets/documents/wireframes/screens.png)
+
+These wireframes are stored in `assets/documents/wireframes` and reflect the key homepage sections: navigation, converter hero, weather panel, exchange chart, currency cards, about section, FAQ, and footer.
 
 # ✅ Testing & Validation (LO2)
 
-HTML validated using W3C Validator
-## assets/validation-result/html-validation.png
-CSS validated using Jigsaw Validator
-JavaScript tested to ensure:
-
-No syntax errors
-No console errors
-
-
-All navigation links tested and working correctly
-
+- HTML structure is built with semantic elements and validated for correctness
+![validation](assets/documents/validation-result/html-validation.png)
+- CSS is structured for responsive rendering and minimal duplication
+![validation](assets/documents/validation-result/css-validation.png)
+- JavaScript behavior is tested to ensure no syntax errors and proper form handling
+![validation](assets/documents/validation-result/javascript-validation.png)
 
 # ☁️ Deployment & Version Control (LO3)
 
-Project deployed using a cloud hosting platform (e.g., GitHub Pages)
-Live version matches development version
-GitHub used for:
-
-Version control
-Commit history tracking
-
-
-Code is clean with no unused or commented sections
+- Project is prepared for GitHub Pages deployment
+- Source code is tracked using Git
+- Commit history should reflect incremental updates and wireframe improvements
+- Deployment can be published from the `main` or `gh-pages` branch for live hosting
 
 # 📚 Documentation & Code Quality (LO4)
 
-Code is separated into:
-
-index.html
-style.css
-script.js
-
-
-JavaScript is modular and organised into functions
-Comments added for readability
-Consistent naming conventions used
-External APIs clearly referenced
+- Code organization separates `index.html`, `assets/css/style.css`, and `assets/js/script.js`
+- Comments are used to document major sections and interactive behavior
+- File paths are consistent and static assets are grouped clearly
+- README contains an overview, feature summary, and setup instructions
 
 # ⚙️ JavaScript Functionality (LO5)
+
 ## Theme Toggle
 
-Uses localStorage to save user preference
-Updates UI and icon dynamically
+- Stores user color preference using `localStorage`
+- Updates UI mode on page reload
 
 ## Weather Feature
 
-Uses geolocation API
-Fetches weather data from OpenWeather API
-Displays:
+- Uses browser geolocation to request local weather data
+- Displays location, conditions, temperature, and feels-like values
+- Includes a weather dropdown/toggle panel
 
-Location
-Temperature
-Condition
+## Currency Converter
 
-
-## Updates weather icon dynamically
-
-Currency Converter
-
-Fetches exchange rates using API
-Handles:
-
-Invalid input
-Missing values
-
-
-## Displays:
-
-Converted value
-Exchange rate
-Last updated timestamp
-
-
+- Fetches exchange rates from an external API
+- Handles currency input and selection
+- Supports swapping source and target currencies
+- Displays converted output cleanly
 
 ## Chart Functionality
 
-Built using Chart.js
-Tracks exchange rate history
-Stores data in localStorage
-Displays trends for different time ranges
+- Uses a chart canvas for exchange rate trend visualization
+- Designed for dynamic updates and responsive layout
+- Provides a visual timeline for rate changes across selections
 
-Currency Cards
+## Country Cards
 
-Data loaded from JSON file
-“Load More” button implemented using loop
+- Shows currency overview cards with simulated icon placeholders
+- Supports responsive grid display for desktop, tablet, and mobile
+- Enables a compact browse flow for common currency pairs
 
-Navigation
+# 🤖 AI Usage & Reflection (LO6)
 
-Smooth scrolling
-Auto-collapse mobile navbar
+AI support was used to help generate wireframe visuals and polish documentation. The workflow combined automated asset generation with manual review to ensure the final README and UI design matched the requested screenshot style.
 
+# 📦 Installation & Setup
 
-##  🤖 AI Usage & Reflection (LO6)
-AI Usage
+Clone the repository:
 
-Used for:
+```bash
+git clone https://github.com/your-username/currency-converter.git
+cd currency-converter
+```
 
-Code generation
-Debugging issues
-Improving UI/UX
+Open the project in a browser or use VS Code Live Server for local development.
 
+# 🚀 Deployment Instructions
 
+1. Push code to GitHub
+2. Open repository settings
+3. Select Pages
+4. Choose the branch to deploy from (`main` or `gh-pages`)
+5. Save and copy the generated live URL
 
-## Reflection
-AI tools helped speed up development and improved code quality. However, manual testing and understanding were essential to ensure correctness. AI acted as a support tool rather than replacing problem-solving skills.
+# 📸 Screenshots
 
-## 📦 Installation & Setup
+Use the wireframe images above for the updated responsive layout preview.
 
-Clone repository:
+# 🔗 API Attribution
 
-Shellgit clone https://github.com/your-username/currency-converter.gitShow more lines
+- OpenWeatherMap for weather data
+- ExchangeRate API for currency conversion rates
 
-Open project:
-
-Shellcd currency-converterShow more lines
-
-Run:
-
-
-Open index.html in browser
-Or use Live Server (VS Code)
+# 📁 Project Structure
 
 
-## 🚀 Deployment Instructions
-GitHub Pages:
-
-Push code to GitHub
-Go to Settings > Pages
-Select branch (main)
-Save and get live URL
-
-
-## 📸 Screenshots
-(Add screenshots here)
-
-Currency converter UI
-Weather dropdown
-Chart view
-Dark / Light mode
-
-
-## 🔗 API Attribution
-
-Weather API: OpenWeatherMap
-Currency API: ExchangeRate API
-
-
-## 📁 Project Structure
 currency-converter/
-│
 ├── index.html
 ├── assets/
 │   ├── css/style.css
 │   ├── js/script.js
 │   ├── images/
-│   └── json/currency.json
+│   ├── json/currency.json
+│   
 └── README.md
 
 
-## 👤 User Stories
 
-As a user, I want to convert currency so that I can check exchange values
-As a user, I want real-time rates so that results are accurate
-As a user, I want to swap currencies quickly
-As a user, I want a chart view to understand trends
-As a user, I want weather updates for convenience
-As a user, I want dark mode for better usability
-As a mobile user, I want responsive design
+# 🚀 Future Improvements
 
+- Add currency favorites and bookmarks
+- Improve chart with real historical API data
+- Add multi-language support
+- Enhance accessibility and keyboard navigation
+- Add offline caching for faster load times
 
-## 🚀 Future Improvements
+# Lighthouse Performance
 
-Add currency favourites
-Improve chart with real historical API data
-Add multi-language support
-Enhance accessibility (keyboard navigation)
-Add offline caching
+- Performance: optimized asset structure and minimal resource overhead
+- Accessibility: semantic HTML, readable contrast, and keyboard-friendly controls
+- Best Practices: modern resource loading via CDN and structured code
+- SEO: meta descriptions, titles, and meaningful content hierarchy
 
-
-
-
-### Screen Size Variation
-
-- **Mobile** – compact navigation, stacked cards, and touch-friendly buttons.
-- **Tablet** – balanced grid layout, visible charts, and responsive stepper controls.
-- **Desktop** – full dashboard view with chart grid, export modal, and wider content panels.
-
-
-
-
-## ✅ Accessibility & Responsiveness
-
-- Uses semantic HTML and accessible button/label patterns.
-- Includes `tabindex` support for keyboard navigation.
-- Uses `loading="lazy"` for images to speed up page load.
-- Applies responsive breakpoints for mobile, tablet, and desktop layouts.
-
-## 🚦 Lighthouse Performance
-
-- **Performance**: Optimized for fast interactions with lazy-loaded assets and minimal DOM overhead.
-- **Accessibility**: Focuses on keyboard navigation, form labeling, and readable contrast.
-- **Best Practices**: Uses modern HTML, avoids duplicate script loads, and leverages CDN resources.
-- **SEO**: Includes meta descriptions, page titles, and meaningful content structure.
-
-> Recommended: Run Chrome Lighthouse for exact scores and capture reports for mobile and desktop performance.
-
-![alt text](image-12.png)
-
-![alt text](image-13.png)
-
-
+> Recommended: run Chrome Lighthouse for exact desktop and mobile scores.
+![lighthouse](assets/documents/validation-result/download.pdf)

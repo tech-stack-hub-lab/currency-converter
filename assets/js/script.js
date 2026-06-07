@@ -1,4 +1,5 @@
 const toggleBtn = document.getElementById("theme-toggle");
+
 const icon = toggleBtn.querySelector("i");
 const API_KEY = "1be45318-dd83-441e-af72-469312d8392f";
 
@@ -11,7 +12,7 @@ icon.classList.remove("fa-sun", "fa-moon");
 icon.classList.add(savedTheme === "dark" ? "fa-sun" : "fa-moon");
 
 // ✅ Toggle theme
-toggleBtn.addEventListener("click", () => {
+document.getElementById("theme-toggle").addEventListener("click", () => {
 	let currentTheme = document.body.getAttribute("data-theme");
 
 	let newTheme = currentTheme === "dark" ? "light" : "dark";
