@@ -116,125 +116,102 @@
         <div class="white_bg">
           <div class="container-fluid section">
             <div class="row">
-              <div class="col-12 col-xl-12 ">
-                <h1>Convert amounts instantly</h1>
+              <div class="col-12 col-xl-12 exchange-form">
+                <h1 class="display-6 text-center mt-4">Convert amounts instantly</h1>
                 <p class="currency-title">
                   Enter an amount and choose currencies to get real-time
                   exchange rates
                 </p>
-              <form class="converter-form" novalidate>
-  
-  <!-- Amount input -->
-  <div class="amount-box">
-    <label for="amount">Amount</label>
-    <input
-      type="number"
-      id="amount"
-      name="amount"
-      min="1"
-      value="1"
-      required
-      aria-required="true"
-    >
-  </div>
-
-  <!-- Currency selectors -->
-  <div class="converter">
-
-    <!-- From Currency -->
-    <div class="input-box">
-      <label for="fromCurrency">From Currency</label>
-      <select 
-        id="fromCurrency" 
-        name="fromCurrency"
-        required
-        aria-required="true"
-        aria-describedby="fromHelp"
-      >
-        <option value="">Select currency</option>
-      </select>
-      <small id="fromHelp">Choose the currency to convert from</small>
-    </div>
-
-    <!-- Swap Button (IMPORTANT: make it a button, not span) -->
-    <button 
-      type="button" 
-      id="swap" 
-      class="swap-icon" 
-      aria-label="Swap currencies"
-    >
-      ⇄
-    </button>
-
-    <!-- To Currency -->
-    <div class="input-box">
-      <label for="toCurrency">To Currency</label>
-      <select 
-        id="toCurrency" 
-        name="toCurrency"
-        required
-        aria-required="true"
-        aria-describedby="toHelp"
-      >
-        <option value="">Select currency</option>
-      </select>
-      <small id="toHelp">Choose the currency to convert to</small>
-    </div>
-
-  </div>
-
-  <!-- Convert button -->
-  <button
-    id="convert-currency"
-    class="custom-button-filled"
-    type="submit"
-  >
-    Convert
-  </button>
-
-  <!-- Result (screen-reader friendly) -->
-  <div 
-    id="result" 
-    class="result-box"
-    role="status"
-    aria-live="polite"
-  ></div>
-
-</form>
-              </div>
-              <div class="col-12 col-xl-12">
-            
+                <form class="converter-form" novalidate>
+                <!-- Amount input -->
+                <div class="amount-box">
+                  <label for="amount">Amount</label>
+                  <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    min="1"
+                    value="1"
+                    required
+                    aria-required="true">
+                </div>
+                <!-- Currency selectors -->
+                <div class="converter">
+                <!-- From Currency -->
+                  <div class="input-box">
+                    <label for="fromCurrency">From Currency</label>
+                    <select 
+                      id="fromCurrency" 
+                      name="fromCurrency"
+                      required
+                      aria-required="true"
+                      aria-describedby="fromHelp">
+                      <option value="">Select currency</option>
+                    </select>
+                    <small id="fromHelp">Choose the currency to convert     from</small>
+                  </div>
+                <!-- Swap Button (IMPORTANT: make it a button, not span) -->
+                  <button 
+                    type="button" 
+                    id="swap" 
+                    class="swap-icon" 
+                    aria-label="Swap currencies">
+                    ⇄
+                  </button>
+                <!-- To Currency -->
+                  <div class="input-box">
+                    <label for="toCurrency">To Currency</label>
+                    <select 
+                      id="toCurrency" 
+                      name="toCurrency"
+                      required
+                      aria-required="true"
+                      aria-describedby="toHelp">
+                      <option value="">Select currency</option>
+                    </select>
+                    <small id="toHelp">Choose the currency to convert to</small>
+                  </div>
+                </div>
+                <!-- Convert button -->
+                <button
+                  id="convert-currency"
+                  class="custom-button-filled"
+                  type="submit">
+                  Convert
+                </button>
+                <!-- Result (screen-reader friendly) -->
+                <div 
+                  id="result" 
+                  class="result-box"
+                  role="status"
+                  aria-live="polite"></div>
+                </form>
+</div>
+<div class="col-12 col-xl-12">
 <section 
   class="converter-form"
   role="region"
-  aria-labelledby="chart-heading"
->
+  aria-labelledby="chart-heading">
   <!-- Accessible heading -->
   <h2 id="chart-heading" class="visually-hidden">
     Exchange Rate Chart
   </h2>
-
-  <div class="card chart-container">
-    
-    <!-- Canvas with accessible fallback + label -->
+<div class="card chart-container">
+   <!-- Canvas with accessible fallback + label -->
     <canvas 
       id="chart"
       role="img"
-      aria-describedby="chart-desc"
-    >
+      aria-describedby="chart-desc">
       Exchange rate chart showing currency trends over time.
     </canvas>
-
-    <!-- Screen reader description -->
+ <!-- Screen reader description -->
     <p id="chart-desc" class="visually-hidden">
       This chart displays the exchange rate changes between selected currencies over time.
     </p>
-
-  </div>
+</div>
 </section>
-
-              </div>
-            </div>
+</div>
+  </div>
           </div>
         </div>
       </div>
@@ -255,34 +232,25 @@
   <h2 class="display-6 text-center mt-4">
     ABOUT US
   </h2>
-
-  <p>
-    Welcome to our Currency Converter platform — your reliable destination for fast,
-    accurate, and real-time currency exchange information.
+<p>
+    Welcome to our Currency Converter platform — your reliable destination for fast,accurate, and real-time currency exchange information.
   </p>
-
-  <div class="more-text" hidden>
+<div class="more-text" hidden>
     <p>
-      We are dedicated to simplifying global finance by providing users with up-to-date
-      exchange rates for over 30 currencies worldwide. Whether you're traveling,
-      shopping online, managing international business transactions, or simply tracking
-      exchange trends, our tool helps you make informed financial decisions with ease.
+      We are dedicated to simplifying global finance by providing users with up-to-date exchange rates for over 30 currencies worldwide. Whether you're traveling,
+shopping online, managing international business transactions, or simply tracking exchange trends, our tool helps you make informed financial decisions with ease.
     </p>
 
     <p>
       Our platform is built with modern technology to ensure speed, accuracy, and a
-      user-friendly experience across all devices including mobile, tablet, and desktop.
-      We continuously improve our system to deliver reliable data sourced from trusted
-      financial providers.
+      user-friendly experience across all devices including mobile, tablet, and desktop.We continuously improve our system to deliver reliable data sourced from trusted financial providers.
     </p>
 
     <p>
-      At our core, we believe that access to accurate financial information should be
-      simple, transparent, and accessible to everyone — anywhere in the world.
+At our core, we believe that access to accurate financial information should be simple, transparent, and accessible to everyone — anywhere in the world.
     </p>
   </div>
-
-  <button
+<button
     class="btn btn-warning"
     data-toggle="read-more">
     Read More
@@ -296,14 +264,15 @@
       <section id="country-currencies" class="section">
         <div class="container">
           <h2 class="display-6 text-center mb-4">Country-wise Currencies</h2>
-          <div class="row" id="currencyContainer"></div>
+          <div class="row" id="currencyContainer">
+          </div>
           <div class="text-center mt-4">
             <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
           </div>
         </div>
       </section>
       <!-- FAQ / Q&A section -->
-  <section id="faq" class="py-3 py-md-5">
+  <section id="faq" class="section">
   <div class="container">
     <h2 class="display-6 text-center mb-4">Questions & Answers</h2>
 

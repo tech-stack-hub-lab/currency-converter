@@ -1,4 +1,4 @@
-# Currency Converter 🌱
+# Currency Converter 
 Convert currencies instantly with a responsive live exchange rate dashboard and local weather insights.
 
 **View Site** → [Currency Converter](https://tech-stack-hub-lab.github.io/currency-converter/)
@@ -81,13 +81,30 @@ currency-converter/
 
 ### 📂 Currency List / Cards
 - As a user, I want to browse available currencies so that I can learn about different world currencies.
-- As a user, I want a “Load More” option so that the page stays clean and fast.
+- As a user, I want country-based currency lists to load incrementally ("Load More") so that the page stays clean and performs well.
+
+---
+
+### ℹ️ About Section
+- As a user, I want a "Read more" option in the About section so that I can expand details progressively without overwhelming the page.
 
 ---
 
 ### ⚠️ Error Handling
 - As a user, I want clear error messages when I enter invalid input so that I know how to fix it.
 - As a user, I want the app to handle API errors smoothly so that it doesn’t crash.
+
+Additional notes on API errors and CORS:
+
+- The chart feature is intended to support multiple historical ranges (day, week, month, year, 5-year). During frontend development the project encountered CORS restrictions when calling the historical exchange-rate API directly from the browser with an API key. Because the API rejects cross-origin requests, the frontend currently requests only weekly data as a permitted workaround.
+- Current fallbacks and mitigations:
+  - Weekly chart data is shown in the frontend to keep the chart usable during development.
+  - Country and currency lists are loaded from `assets/json/currency.json` to avoid repeated API requests and improve performance.
+  - API errors are surfaced to the user with friendly guidance to retry or check connectivity.
+
+- Planned permanent solution:
+  - Implement a small backend (Node/Express, serverless function, or similar) to proxy historical API requests, securely store the API key, and avoid CORS issues. The backend will aggregate historical ranges (day/week/month/year/5-year) and expose endpoints the frontend can safely consume.
+  - After a backend proxy is available, the chart will be extended to support selectable time ranges with full historical data.
 
 ---
 
@@ -100,7 +117,8 @@ currency-converter/
 
 - Live currency conversion and swap controls
 - Weather panel with conditions, temperature, and feels-like data
-- Responsive chart section for exchange trends
+- Responsive chart section for exchange trends (currently limited to weekly data in the frontend)
+- Uses a local `assets/json/currency.json` for the country/currency list to improve performance and reduce API calls
 - Country currency overview cards
 - About section with informative layout
 - Expandable FAQ-style panels for user information
@@ -177,7 +195,25 @@ These wireframes are stored in `assets/documents/wireframes` and reflect the key
 
 # 🤖 AI Usage & Reflection (LO6)
 
-AI support was used to help generate wireframe visuals and polish documentation. The workflow combined automated asset generation with manual review to ensure the final README and UI design matched the requested screenshot style.
+AI tools were used as an assistive resource throughout this project. Their use focused on suggestion, verification, and content generation while retaining human oversight. Key uses:
+
+- Drafting and polishing README text, user stories, and section headings.
+- Generating wireframe and mockup concepts that informed layout decisions.
+- Checking JavaScript logic and suggesting improvements (I asked the AI to review functions and then validated changes manually).
+- Proposing accessibility, responsiveness, and UX improvements.
+- Suggesting test cases, validation checks, and debugging approaches.
+- Producing concise commit-message and documentation drafts.
+
+Responsible use and limitations:
+
+- AI output was used as recommendations only; every code change and design decision was reviewed and tested by me before inclusion.
+- I did not share any sensitive or private data with the AI.
+- Where the AI influenced visuals or copy, I edited for accuracy, clarity, and consistency with project goals.
+
+Example prompts:
+
+ - "Check this currency conversion function for logic errors and suggest improvements."
+ - "Create wireframe ideas for a currency-converter dashboard with weather panel."
 
 # 📦 Installation & Setup
 
@@ -210,8 +246,8 @@ Use the wireframe images above for the updated responsive layout preview.
 ![Screenshot of the light mode on tablet](assets/documents/tablet/tablet1.jpeg)
 
 ![Mobile]
-![Screenshot of the dark mode on mobile](assets/documents/mobile/mobile2.jpeg)
-![Screenshot of the light mode on mobile](assets/documents/mobile/mobile1.jpeg)
+![Screenshot of the dark mode on mobile](assets/documents/mobile/1.png)
+![Screenshot of the light mode on mobile](assets/documents/mobile/2.png)
 # 🔗 API Attribution
 
 - OpenWeatherMap for weather data
@@ -220,7 +256,7 @@ Use the wireframe images above for the updated responsive layout preview.
 # 🚀 Future Improvements
 
 - Add currency favorites and bookmarks
-- Improve chart with real historical API data
+- Improve chart with real historical API data (backend proxy to resolve CORS and secure API keys; support day/week/month/year/5-year ranges)
 - Add multi-language support
 - Enhance accessibility and keyboard navigation
 - Add offline caching for faster load times
