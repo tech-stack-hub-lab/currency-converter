@@ -1,7 +1,5 @@
 const toggleBtn = document.getElementById("theme-toggle");
-
 const icon = toggleBtn.querySelector("i");
-const API_KEY = "1be45318-dd83-441e-af72-469312d8392f";
 
 // ✅ Load saved theme
 let savedTheme = localStorage.getItem("theme") || "light";
@@ -14,7 +12,6 @@ icon.classList.add(savedTheme === "dark" ? "fa-sun" : "fa-moon");
 // ✅ Toggle theme
 document.getElementById("theme-toggle").addEventListener("click", () => {
 	let currentTheme = document.body.getAttribute("data-theme");
-
 	let newTheme = currentTheme === "dark" ? "light" : "dark";
 
 	// change theme
@@ -475,7 +472,7 @@ document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
 	});
 });
 
-
+// About section read more text
 document.querySelector('[data-toggle="read-more"]').addEventListener('click', function () {
   const moreText = document.querySelector('.more-text');
 
