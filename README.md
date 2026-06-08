@@ -2,11 +2,13 @@
 Convert currencies instantly with a responsive live exchange rate dashboard and local weather insights.
 
 **View Site** → [Currency Converter](https://tech-stack-hub-lab.github.io/currency-converter/)
-![Screenshot of the game on different devices](documentation/mockup.png)
+![Screenshot of the dark mode on different devices](assets/documents/mockup1.jpeg)
+![Screenshot of the light mode on different devices](assets/documents/mockup2.jpeg)
 
 ## 📚 Table of Contents
 
 - [📌 Project Overview](#-project-overview)
+- [📁 Project Structure](#-project-structure)
 - [🎯 User Stories](#-user-stories)
 - [🚀 Features](#-features)
 - [🖥️ Technologies Used](#️-technologies-used)
@@ -23,8 +25,6 @@ Convert currencies instantly with a responsive live exchange rate dashboard and 
 - [🚀 Deployment Instructions](#-deployment-instructions)
 - [📸 Screenshots](#-screenshots)
 - [🔗 API Attribution](#-api-attribution)
-- [📁 Project Structure](#-project-structure)
-- [👤 User Stories](#-user-stories)
 - [🚀 Future Improvements](#-future-improvements)
 - [Lighthouse Performance](#lighthouse-performance)
 
@@ -34,7 +34,18 @@ Convert currencies instantly with a responsive live exchange rate dashboard and 
 
 Currency Converter is a responsive single-page web application built to convert currencies with real-time exchange data and weather context. The design focuses on clean layout, responsive behavior, and fast user interaction across desktop, tablet, and mobile.
 
+# 📁 Project Structure
 
+
+currency-converter/
+├── index.html
+├── assets/
+│   ├── css/style.css
+│   ├── js/script.js
+│   ├── images/
+│   ├── json/currency.json
+│   
+└── README.md
 
 ## 🧾 User Stories
 
@@ -116,26 +127,12 @@ The UI emphasizes a modular dashboard with clear sections and responsive groupin
 
 **Dark mode**
 
-| Role | Hex |
-|------|-----|
-| Background | `#000000` |
-| Body text | `#ccffcc` |
-| Glow accent | `#00ff00` |
-| Player name / commands | `#00e5ff` |
-| Weather / theme button | `#ffffff` |
-| Game over / victory | `#ff2222` |
-| Top bar border | `#333333` |
+![Currency Converter](assets/documents/dark-mode.png)
 
 **Light mode**
 
-| Role | Hex |
-|------|-----|
-| Background | `#f5f0e1` |
-| Body text | `#1a1a1a` |
-| Weather / theme button | `#8b0000` |
-| Player name / commands | `#007700` |
+![Currency Converter](assets/documents/light-mode.png)
 
-![Behram's Interactive Fiction Colour Palette](documentation/color-palette.png)
 
 ## Typography
 
@@ -143,7 +140,7 @@ The UI emphasizes a modular dashboard with clear sections and responsive groupin
 - Bold headings for section titles and UI labels
 - Smaller body text for field and helper content
 - Responsive typography sizing across breakpoints
-The project uses one display family from [Google Fonts](https://fonts.google.com/), loaded in `index.html`.
+The project uses one display family from [Google Fonts](https://fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900), loaded in `index.html`.
 
 ## Wireframes
 
@@ -176,37 +173,7 @@ These wireframes are stored in `assets/documents/wireframes` and reflect the key
 - File paths are consistent and static assets are grouped clearly
 - README contains an overview, feature summary, and setup instructions
 
-# ⚙️ JavaScript Functionality (LO5)
 
-## Theme Toggle
-
-- Stores user color preference using `localStorage`
-- Updates UI mode on page reload
-
-## Weather Feature
-
-- Uses browser geolocation to request local weather data
-- Displays location, conditions, temperature, and feels-like values
-- Includes a weather dropdown/toggle panel
-
-## Currency Converter
-
-- Fetches exchange rates from an external API
-- Handles currency input and selection
-- Supports swapping source and target currencies
-- Displays converted output cleanly
-
-## Chart Functionality
-
-- Uses a chart canvas for exchange rate trend visualization
-- Designed for dynamic updates and responsive layout
-- Provides a visual timeline for rate changes across selections
-
-## Country Cards
-
-- Shows currency overview cards with simulated icon placeholders
-- Supports responsive grid display for desktop, tablet, and mobile
-- Enables a compact browse flow for common currency pairs
 
 # 🤖 AI Usage & Reflection (LO6)
 
@@ -234,26 +201,21 @@ Open the project in a browser or use VS Code Live Server for local development.
 # 📸 Screenshots
 
 Use the wireframe images above for the updated responsive layout preview.
+![Desktop]
+![Screenshot of the dark mode on desktop](assets/documents/desktop/1.jpeg)
+![Screenshot of the light mode on desktop](assets/documents/desktop/2.jpeg)
 
+![Tablet]
+![Screenshot of the dark mode on tablet](assets/documents/tablet/tablet2.jpeg)
+![Screenshot of the light mode on tablet](assets/documents/tablet/tablet1.jpeg)
+
+![Mobile]
+![Screenshot of the dark mode on mobile](assets/documents/mobile/mobile2.jpeg)
+![Screenshot of the light mode on mobile](assets/documents/mobile/mobile1.jpeg)
 # 🔗 API Attribution
 
 - OpenWeatherMap for weather data
 - ExchangeRate API for currency conversion rates
-
-# 📁 Project Structure
-
-
-currency-converter/
-├── index.html
-├── assets/
-│   ├── css/style.css
-│   ├── js/script.js
-│   ├── images/
-│   ├── json/currency.json
-│   
-└── README.md
-
-
 
 # 🚀 Future Improvements
 
@@ -271,4 +233,4 @@ currency-converter/
 - SEO: meta descriptions, titles, and meaningful content hierarchy
 
 > Recommended: run Chrome Lighthouse for exact desktop and mobile scores.
-![lighthouse](assets/documents/validation-result/download.pdf)
+![lighthouse](assets/documents/validation-result/accessibility.png)

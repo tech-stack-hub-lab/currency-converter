@@ -1,7 +1,11 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+/* CSS Variables */
 /* System font stack for best performance */
 :root {
-    --primary-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --secondary-font: Georgia, "Times New Roman", serif;
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "Roboto", Serif;
     --primary-color: #3a2620; /* dark brown */
     --secondary-color: #0A1460; /* light brown */
     --highlight-color: #416a8e; /* blue */
