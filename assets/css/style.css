@@ -970,3 +970,8 @@ body[data-theme="light"] .titlepage p {
   .chart-container { aspect-ratio: 12 / 8; padding: 0 0.5rem; }
 }
 
+
+#chart-container {
+    height: 400px;
+}
+

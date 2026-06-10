@@ -114,7 +114,7 @@ const chartCanvas = document.getElementById("chart");
 const chartRangeSelect = document.getElementById("chartRange");
 
 let myChart;
-const defaultRange = "month";
+const defaultRange = "week";
 let chartRange = defaultRange;
 
 function initChart() {
@@ -130,16 +130,30 @@ function initChart() {
 				backgroundColor: "rgba(47, 128, 237, 0.2)",
 				borderColor: "rgb(47, 128, 237)",
 				fill: true,
-				tension: 0.25
+				tension: 0.25,
+				pointRadius: 3,
+				pointHoverRadius: 8,
+				hitRadius: 10
 			}]
 		},
 		options: {
 			responsive: true,
+			maintainAspectRatio: false,
+			interaction: {
+					mode: "nearest",
+					intersect: false
+				},
+				plugins: {
+					tooltip: {
+						enabled: true
+					}
+				},
+
 			scales: {
 				x: {
 					title: {
 						display: true,
-						text: "Week"
+						text: "Date"
 					}
 				},
 				y: {
@@ -198,19 +212,19 @@ function formatTimestamp(timestamp, rangeKey) {
 	const date = new Date(timestamp);
 	if (rangeKey === "hours") {
 		return date.toLocaleTimeString([], {
-			hour: "2-digit",
-			minute: "2-digit"
+			month: "short",
+    		day: "numeric",
 		});
 	}
 	if (rangeKey === "week" || rangeKey === "month") {
 		return date.toLocaleDateString([], {
 			month: "short",
-			day: "numeric"
+    		day: "numeric",
 		});
 	}
 	return date.toLocaleDateString([], {
-		year: "numeric",
-		month: "short"
+		month: "short",
+    		day: "numeric",
 	});
 }
 
