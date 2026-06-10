@@ -324,7 +324,7 @@ async function loadJSON() {
 				});
 				result.innerHTML = `
       <strong>${amount} ${fromCurrency.value}</strong> = 
-      <strong>${converted.toFixed(2)} ${toCurrency.value}</strong><br>
+      <strong>${rate.toFixed(4)} ${toCurrency.value}</strong><br>
       Exchange Rate: 1 ${fromCurrency.value} = ${rate.toFixed(4)} ${toCurrency.value}<br>
       Last Updated: ${formattedDateTime}
     `;
