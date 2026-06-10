@@ -109,7 +109,7 @@ const fromCurrency = document.getElementById("fromCurrency");
 const toCurrency = document.getElementById("toCurrency");
 const result = document.getElementById("result");
 const swapBtn = document.getElementById("swap");
-const convertC = document.getElementById("convert-currency");
+const rateConvert = document.getElementById("rateConvert");
 const chartCanvas = document.getElementById("chart");
 const chartRangeSelect = document.getElementById("chartRange");
 
@@ -285,6 +285,7 @@ async function loadJSON() {
 		convertCurrency();
 		// ===================== LIVE CONVERSION =====================
 		async function convertCurrency() {
+			
 			const amount = amountEl.value;
 			if (!amount || amount <= 0) {
 				result.innerText = "Enter a valid amount";
@@ -350,6 +351,13 @@ async function loadJSON() {
 
 		// ===================== SWAP =====================
 		swapBtn.addEventListener("click", () => {
+			const temp = fromCurrency.value;
+			fromCurrency.value = toCurrency.value;
+			toCurrency.value = temp;
+
+			convertCurrency();
+		});
+		rateConvert.addEventListener("click", () => {
 			const temp = fromCurrency.value;
 			fromCurrency.value = toCurrency.value;
 			toCurrency.value = temp;
