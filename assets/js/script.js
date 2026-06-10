@@ -109,7 +109,7 @@ const fromCurrency = document.getElementById("fromCurrency");
 const toCurrency = document.getElementById("toCurrency");
 const result = document.getElementById("result");
 const swapBtn = document.getElementById("swap");
-const rateConvert = document.getElementById("rateConvert");
+const convertC = document.getElementById("convert-currency");
 const chartCanvas = document.getElementById("chart");
 const chartRangeSelect = document.getElementById("chartRange");
 
@@ -357,13 +357,7 @@ async function loadJSON() {
 
 			convertCurrency();
 		});
-		rateConvert.addEventListener("click", () => {
-			const temp = fromCurrency.value;
-			fromCurrency.value = toCurrency.value;
-			toCurrency.value = temp;
-
-			convertCurrency();
-		});
+		
 	} catch (error) {
 		console.error("Error:", error);
 	}
