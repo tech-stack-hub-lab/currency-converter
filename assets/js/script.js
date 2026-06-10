@@ -114,7 +114,7 @@ const chartCanvas = document.getElementById("chart");
 const chartRangeSelect = document.getElementById("chartRange");
 
 let myChart;
-const defaultRange = "week";
+const defaultRange = "month";
 let chartRange = defaultRange;
 
 function initChart() {
@@ -139,7 +139,7 @@ function initChart() {
 				x: {
 					title: {
 						display: true,
-						text: "Date"
+						text: "Week"
 					}
 				},
 				y: {
@@ -338,7 +338,7 @@ async function loadJSON() {
 		}
 
 		// ✅ Auto update (LIVE)
-		convertC.addEventListener("button", convertCurrency);
+		convertC.addEventListener("click", convertCurrency);
 		amountEl.addEventListener("input", convertCurrency);
 		fromCurrency.addEventListener("change", convertCurrency);
 		toCurrency.addEventListener("change", convertCurrency);
@@ -486,3 +486,4 @@ document.querySelector('[data-toggle="read-more"]').addEventListener('click', fu
     this.textContent = 'Read more';
   }
 });
+
