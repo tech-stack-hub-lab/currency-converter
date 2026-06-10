@@ -280,7 +280,7 @@ async function loadJSON() {
 
 		fromCurrency.value = "GBP";
 		toCurrency.value = "INR";
-		
+		amountEl.value = 1;
 		initChart();
 		convertCurrency();
 		// ===================== LIVE CONVERSION =====================
@@ -324,7 +324,7 @@ async function loadJSON() {
 				});
 				result.innerHTML = `
       <strong>${amount} ${fromCurrency.value}</strong> = 
-      <strong>${rate.toFixed(4)} ${toCurrency.value}</strong><br>
+      <strong>${converted.toFixed(2)} ${toCurrency.value}</strong><br>
       Exchange Rate: 1 ${fromCurrency.value} = ${rate.toFixed(4)} ${toCurrency.value}<br>
       Last Updated: ${formattedDateTime}
     `;
